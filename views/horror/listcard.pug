@@ -1,0 +1,16 @@
+extends ../layout
+block content
+    h2 Liste des cartes des contrées de l'horreur ! 
+    .inner
+        .cards
+            each card in listCard
+                div(class = `single-card ${ card.backText !== "" ? "reverse-card" : ""}`)
+                    .card-front
+                        .head-card
+                            p= card.name
+                        p= card.text
+                    if card.backText !== ""
+                        .card-back
+                            .head-card
+                                p= card.name
+                            p= card.backText

@@ -1,0 +1,65 @@
+$card-size : 250px;
+$card-head-size : 50px;
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    
+    p {
+        margin-top : 0px;
+        margin-bottom:  0px;
+    }
+    
+}
+
+
+.single-card{
+    width: calc(33.3333% - 2*0.5em);
+    height: $card-size;
+    background: transparent;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-shadow: none;
+}
+.head-card{
+    background: firebrick;
+    text-align: center;
+    width: 100%;
+    p{
+        line-height: 3;
+    }
+    height: $card-head-size;
+}
+.body-card{
+    background: grey;
+    flex-grow: 4;
+}
+
+/* card lib
+
+*/
+
+.card-front
+{
+    z-index: 100;
+    backface-visibility: hidden;
+    transition: 2s;
+    min-height: $card-size;
+    background: ghostwhite;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+}
+
+.card-back
+{
+    z-index: 50;
+    transform: rotateY(-180deg); /* Celui-ci est retourné par défaut */
+    backface-visibility: hidden;
+    transition: 2s;
+    position: relative;
+    min-height: $card-size;
+    top:-$card-size;
+    background: grey;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,78 @@
+extends layout
+
+block content
+    h1 Plateau de jeu
+
+    button.btn-hide-seek Cacher
+    #plateau-jdr-control-gen
+        form(action="plateau", method="post").form
+            label(for="line") Nombre de lignes
+            input(type="number", name="line" value=`${line || 16}`)
+            label(for="column") Nombre de colonnes
+            input(type="number", name="column" value=`${column || 23}`)
+            label(for="zoom") Zoom
+            input(type="number", name="zoom" step="0.01" value=`${zoom || 1}` id="zoom-value")
+            label(for="caseSize") Taille des cases
+            input(type="number", name="caseSize", step="1" value=`${caseSize || 34}` id="case-size")
+            label(for="map") Selection de la carte
+            select(name="map")
+                option(value="SnowySummit" selected=map==="SnowySummit") Snowy(16x23)
+                option(value="surgi" selected=map==="surgi") Surgi des Sables
+            input(type="submit", value="Go !")
+
+    if column && line
+        div
+                p Mode actuel #[span#mode-actu]
+
+        div#app.plateau-jdr
+            table#plateau: tbody
+                tr
+                    td.origintr
+                    - var n = 0; 
+                    while n < column
+                        td= n++
+                - var m = 0;
+                - n = 0;
+                while m < line
+                    tr
+                        td=m++
+                        while n < column
+                            td(id=`case-${m-1}-${n}` class="case"): div(id=id=`case-${m-1}-${n}-1`)
+                            - n++;
+                        -n = 0;
+
+            #plateau-jdr-control-pan
+            
+                ul(id="list-item-player" class="list-item")
+                    h2 Joueurs
+                    li.player-1 Pezlo
+                    li.player-2 Wulf
+                    li.player-3 Hugo
+                    li.player-4 Booba
+                    li.player-5 Neio
+                
+                ul(id="list-item-ennemie" class="list-item")
+                    h2 Ennemis
+                    li.ennemie-1 E1
+                    li.ennemie-2 E2
+                    li.ennemie-3 E3
+                    li.ennemie-4 E4
+                    li.ennemie-5 E5
+                    li.ennemie-6 E6
+                    li.ennemie-7 Boss1
+                    li.ennemie-8 Boss2
+                
+                ul(id="list-item-terrain" class="list-item")
+                    h2 Terrains
+                    li.tex-water Water
+                    li.tex-ground Ground
+                    li.tex-wall Wall
+                    li Effacer
+            
+            
+    else
+        p Lancez le formulaire pour load la map
+    
+    
+    
+
