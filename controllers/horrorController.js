@@ -7,7 +7,7 @@ exports.horrorDefault = async (req,res) => {
 
 exports.horrorListCard = async (req,res) => {
     const list = await HorrorCards.find();
-    res.render('horror/listcard', { title: 'Les contrées de l\'horreur - Liste des cartes', listCard : list});
+    res.render('horror/listcard', { title: 'Les contrées de l\'horreur', listCard : list});
 }
 
 exports.horrorAddCard = (req,res) => {
