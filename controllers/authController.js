@@ -85,11 +85,17 @@ exports.updatePassword = async (req, res) =>{
     res.redirect('/');
 }
 
-exports.userIsAdmin = async (req, res) => {
+exports.userIsAdmin = async (req, res, next) => {
     const user = await User.findById(req.user._id);
 
-    if(user.role.indexOf("ADMIN") > -1)
+    if(user.role.indexOf("ADMIN") > -1){
         console.log("IS ADMIN");
-    else
+        return next();
+    }
+
+    else{
         console.log("IS NOT ADMIN");
+        req.flash('error', 'Il faut être administrateur');
+        res.redirect('/account');
+    }
 }

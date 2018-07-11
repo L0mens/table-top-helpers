@@ -26,7 +26,7 @@ exports.validateRegister = (req,res,next) => {
     req.checkBody('password-confirm', 'oops Password is not the same !').equals(req.body.password);
 
     const errors = req.validationErrors();
-
+    console.log(errors);
     if(errors) {
         req.flash('error', errors.map(err => err.msg));
         res.render('register', {title: 'Register', body: req.body, flashes : req.flash()});
@@ -59,6 +59,7 @@ exports.updateAccount = async (req,res) => {
     res.redirect('back'); //Redirect to url before caming here
 }
 
-exports.adminPanel = async (req,res) => {
+exports.adminPanel = async (req,res,next) => {
     console.log("a");
+    res.redirect('/');
 }
