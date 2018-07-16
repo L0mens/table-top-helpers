@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const HorrorCards = mongoose.model('HorrorCards')
+const HorrorMiniCards = mongoose.model('HorrorMiniCards')
 
 exports.horrorDefault = async (req,res) => {
     res.render('horror/main', { title: 'Les contrées de l\'horreur'});
 }
 
 exports.horrorListCard = async (req,res) => {
-    const list = await HorrorCards.find();
+    const list = await HorrorMiniCards.find();
     res.render('horror/listcard', { title: 'Les contrées de l\'horreur', listCard : list});
 }
 
@@ -16,9 +16,17 @@ exports.horrorAddCard = (req,res) => {
 
 
 exports.horrorAddCardInBase = async (req,res) => {
-    const [origin,name,cardType,text,backText] = Object.values(req.body);
+    const [origin,name,cardType,cardSousType,text,backText,trigger] = Object.values(req.body);
     try{
-        const card = await (new  HorrorCards({name:name,cardType:cardType,text:text,backText:backText,origin:origin })).save();
+        const card = await (new  HorrorMiniCards({
+            name:name,
+            cardType:cardType,
+            cardSousType:cardSousType,
+            text:text,
+            backText:backText,
+            origin:origin,
+            trigger:trigger
+        })).save();
         req.flash('success', 'Carte crée');
         console.log(card);
         res.redirect('/horror/add-card');

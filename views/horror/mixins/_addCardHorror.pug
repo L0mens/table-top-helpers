@@ -1,15 +1,21 @@
-mixin addCard(card = {})
+mixin addMiniCard(card = {})
     form.form(action="" method="POST")
     
         select(name="origin")
             option(value="Jeu de base") Jeu de base
         label(for="name") Nom
-        input(type="text" name="name")
+        input(type="text" name="name" required)
         label(for="type") Type
-        input(type="text", name="type")
+        select(name="type")
+            option(value="Sort") Sort
+            option(value="Condition") Condition
+        label(for="type") Sous type
+        input(type="text", name="sousType")
         label(for="texte") Texte
-        textarea(name="texte", cols="30", rows="10")
+        textarea(name="texte", cols="30", rows="10" required)
         label(for="backtext") Texte au dos
         textarea(name="backtext", cols="30", rows="10")
+        label(for="type") Activation
+        input(type="text", name="trigger")
         
         input(type="submit", value="Ajouter la carte")

@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 const validator = require('validator');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 
-const cardsSchema = new Schema({
+const miniCardsSchema = new Schema({
     name : {
         type: String,
         required: "Une carte doit avoir un nom"
@@ -13,11 +13,16 @@ const cardsSchema = new Schema({
         type: String,
         required :  "Une carte doit posséder un type"
     },
+    cardSousType : {
+        type: String,
+        required :  "Une carte doit posséder un sous type"
+    },
     text : {
         type : String,
         required : "Une carte ne peux être vide"
     },
     backText : String,
+    trigger : String,
     origin : {
         type : String,
         default: "Jeu de base",
@@ -25,4 +30,4 @@ const cardsSchema = new Schema({
     },
     image: String
 });
- module.exports = mongoose.model('HorrorCards', cardsSchema);
+ module.exports = mongoose.model('HorrorMiniCards', miniCardsSchema);
