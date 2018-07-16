@@ -13,17 +13,17 @@ exports.registerForm = (req,res) =>{
 
 exports.validateRegister = (req,res,next) => {
     req.sanitizeBody('name');
-    req.checkBody('name', 'You must supply a name').notEmpty();
-    req.checkBody('email', 'That Email is not valid!').isEmail();
+    req.checkBody('name', 'Vous devez rentrer un nom').notEmpty();
+    req.checkBody('email', 'Cet email n\'est pas valide').isEmail();
     req.sanitizeBody('email').normalizeEmail({
         remove_dots: false,
         remove_extension: false,
         gmail_remove_subaddress: false
     });
-    req.checkBody('password', 'Password Cannot be Blank!').notEmpty();
-    req.checkBody('password-confirm', 'Confirm Password Cannot be Blank!').notEmpty();
+    req.checkBody('password', 'Le mot de passe ne peut être vide').notEmpty();
+    req.checkBody('password-confirm', 'La confirmation du mot de passe ne peut être vide').notEmpty();
 
-    req.checkBody('password-confirm', 'oops Password is not the same !').equals(req.body.password);
+    req.checkBody('password-confirm', 'Les mots de passes ne sont pas identiques').equals(req.body.password);
 
     const errors = req.validationErrors();
     console.log(errors);
@@ -31,13 +31,20 @@ exports.validateRegister = (req,res,next) => {
         req.flash('error', errors.map(err => err.msg));
         res.render('register', {title: 'Register', body: req.body, flashes : req.flash()});
     }
-    next();
+    else
+        next();
 };
 
 exports.register = async (req,res,next) => {
     const user = new User({ email: req.body.email, name: req.body.name});
     const registerWithPromise = promisify(User.register, User);
-    await registerWithPromise(user, req.body.password);
+    try{
+        await registerWithPromise(user, req.body.password);
+    }catch(err){
+        console.log(err.message);
+        req.flash('error', err.message);
+        res.render('register', {title: 'Register', body: req.body, flashes : req.flash()});
+    }
     next();
 }
 
