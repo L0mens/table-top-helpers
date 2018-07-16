@@ -1,4 +1,5 @@
 mixin addMiniCard(card = {})
+    h3 Ajouter une mini carte
     form.form(action="" method="POST")
     
         select(name="origin")
@@ -19,3 +20,31 @@ mixin addMiniCard(card = {})
         input(type="text", name="trigger")
         
         input(type="submit", value="Ajouter la carte")
+
+mixin addEncounterCard(card = {})
+    h3 Ajouter une carte rencontre
+    form.form(action="" method="POST")
+        select(name="origin")
+            option(value="Jeu de base") Jeu de base
+        label(for="name") Nom
+        input(type="text" name="name" required)
+        label(for="type") Type
+        select(name="type" id="select-type-encounter")
+            option(value="Portail") Portail
+            option(value="Expedition") Expédition
+            option(value="Monde") Monde
+            option(value="SpeGA") Spéciale Grand Ancien
+            option(value="RechGA") Recherche Grand Ancien
+        label(for="lieux") Lieux
+        input(type="text" name="lieux")
+        label(for="first") Premier bloc
+        input(type="text", name="first-title" placeholder="Titre")
+        textarea(name="first", cols="30", rows="10" required)
+        label(for="second") Second bloc
+        input(type="text", name="second-title" placeholder="Titre")
+        textarea(name="second", cols="30", rows="10" )
+        label(for="third") Troisième bloc
+        input(type="text", name="third-title" placeholder="Titre")
+        textarea(name="third", cols="30", rows="10" )
+        label(for="number") Numero
+        input(type="text", name="number")

@@ -1,4 +1,332 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'panama';
+  src: url("/fonts/panama-bold-webfont.woff2") format("woff2"), url("/fonts/panama-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  font-size: 10px; }
+
+body {
+  font-size: 1.5rem;
+  color: #303030; }
+
+h1, h2 {
+  font-size: 5rem;
+  font-family: 'Panama';
+  font-weight: 600;
+  letter-spacing: -1px; }
+
+h3 {
+  font-size: 4rem;
+  font-family: 'Panama';
+  font-weight: 600;
+  letter-spacing: -1px; }
+
+h4 {
+  font-size: 3rem;
+  font-family: 'Panama';
+  font-weight: 600;
+  letter-spacing: -1px; }
+
+a {
+  text-decoration: none;
+  color: #303030; }
+
+p a {
+  border-bottom: 2px solid #FFC40E; }
+
+p {
+  line-height: 2;
+  font-size: 1.6rem; }
+
+.title {
+  word-wrap: break-word;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 40px;
+  z-index: 2;
+  line-height: 1.1;
+  -ms-transform: skew(0, -3deg);
+      transform: skew(0, -3deg);
+  line-height: 1.1; }
+  .title--long {
+    font-size: 30px; }
+  .title:before {
+    content: '';
+    width: 50px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    -ms-transform: skew(-5deg);
+        transform: skew(-5deg); }
+  .title a {
+    border-bottom: 0;
+    background-image: linear-gradient(to right, rgba(255, 196, 14, 0.8) 100%, rgba(255, 196, 14, 0.8) 50%); }
+
+.title--single {
+  max-width: 600px;
+  margin-top: -9rem;
+  font-size: 10rem;
+  text-align: center; }
+
+.boss {
+  background: red; }
+
+.player-1 {
+  background: url(/images/chara-token/player/lopez.png) no-repeat;
+  background-size: 100%;
+  z-index: 1; }
+
+.player-2 {
+  background: url(/images/chara-token/player/wulf.png) no-repeat;
+  background-size: 100%;
+  z-index: 1; }
+
+.player-3 {
+  background: url(/images/chara-token/player/hugo.png) no-repeat;
+  background-size: 100%;
+  z-index: 1; }
+
+.player-4 {
+  background: url(/images/chara-token/player/booba.png) no-repeat;
+  background-size: 100%;
+  z-index: 1; }
+
+.player-5 {
+  background: indianred;
+  z-index: 1; }
+
+.ennemie-1 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-2 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-3 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-4 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-5 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-6 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-7 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-8 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-9 {
+  background: firebrick;
+  z-index: 1; }
+
+.ennemie-10 {
+  background: firebrick;
+  z-index: 1; }
+
+.tex-water {
+  background: url(/images/textures-plateau/tex_water.jpg) no-repeat;
+  background-size: 100%;
+  z-index: 0; }
+
+.tex-ground {
+  background: url(/images/textures-plateau/tex_ground.png) no-repeat;
+  background-size: 100%;
+  z-index: 0; }
+
+.tex-wall {
+  background: gray no-repeat;
+  background-size: 100%;
+  z-index: 0; }
+
+.list-item {
+  list-style: none;
+  width: 150px;
+  cursor: pointer; }
+
+#list-item .separateur {
+  visibility: hidden; }
+
+.list-item li {
+  padding: 10px 0px;
+  text-align: center;
+  background: grey;
+  border: 1px black dotted; }
+
+.list-item .item-selected-on-list {
+  background: lawngreen; }
+
+#plateau-jdr-control-pan h2 {
+  padding: 0px 0px;
+  font-size: 24px;
+  text-align: center; }
+
+#plateau-jdr-control-pan {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+#plateau tr:first-of-type {
+  text-align: center; }
+
+#plateau .case > div {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+#plateau {
+  border-collapse: collapse; }
+
+#app {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+#app tbody {
+  background: url(/images/maps/SnowySummit.jpg) no-repeat;
+  background-size: 782px 544px;
+  background-position: 11px 20.25px; }
+
+.case {
+  min-width: 34px;
+  height: 34px;
+  border: 1px solid black;
+  padding: 0; }
+
+#plateau-jdr-control-gen {
+  transition: all 1s linear; }
+
+.hidden {
+  -ms-transform-origin: 0 0;
+      transform-origin: 0 0;
+  -ms-transform: scale(0);
+      transform: scale(0);
+  height: 0px; }
+
+footer {
+  width: 100%;
+  min-height: 100px;
+  margin-top: 40px;
+  background: #303030; }
+
+footer p {
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 0; }
+
+.cards {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .cards p {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+
+.single-card {
+  width: calc(33.3333% - 2*0.5em);
+  height: 250px;
+  background: transparent;
+  margin: 0.5em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 0;
+  box-shadow: none; }
+
+.head-card {
+  background: firebrick;
+  text-align: center;
+  width: 100%;
+  height: 50px; }
+  .head-card p {
+    line-height: 3; }
+
+.body-card {
+  background: grey;
+  -ms-flex-positive: 4;
+      flex-grow: 4; }
+
+/* card lib
+
+*/
+.card-front {
+  z-index: 100;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 2s;
+  min-height: 250px;
+  background: ghostwhite;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15); }
+
+.card-back {
+  z-index: 50;
+  transform: rotateY(-180deg);
+  /* Celui-ci est retourné par défaut */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 2s;
+  position: relative;
+  min-height: 250px;
+  top: -250px;
+  background: grey;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15); }
+
+.menu-card {
+  width: 150px;
+  height: 200px;
+  border: blue 2px solid;
+  margin: 0 50px; }
+  .menu-card a {
+    height: 100%;
+    display: block; }
+  .menu-card p {
+    margin: -3px 0 0 0;
+    height: 46px;
+    background: linear-gradient(90deg, #a026bf 20%, #e82c75 80%);
+    line-height: 46px;
+    text-align: center;
+    color: white; }
+  .menu-card img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    margin: 0; }
+
+#menu-horror {
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
 html {
   font-size: 10px; }
 
@@ -431,70 +759,6 @@ template {
  */
 [hidden] {
   display: none; }
-
-@font-face {
-  font-family: 'panama';
-  src: url("/fonts/panama-bold-webfont.woff2") format("woff2"), url("/fonts/panama-bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-html {
-  font-size: 10px; }
-
-body {
-  font-size: 1.5rem;
-  color: #303030; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 5rem;
-  font-family: 'Panama';
-  font-weight: 600;
-  letter-spacing: -1px; }
-
-a {
-  text-decoration: none;
-  color: #303030; }
-
-p a {
-  border-bottom: 2px solid #FFC40E; }
-
-p {
-  line-height: 2;
-  font-size: 1.6rem; }
-
-.title {
-  word-wrap: break-word;
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  font-size: 40px;
-  z-index: 2;
-  line-height: 1.1;
-  -ms-transform: skew(0, -3deg);
-      transform: skew(0, -3deg);
-  line-height: 1.1; }
-  .title--long {
-    font-size: 30px; }
-  .title:before {
-    content: '';
-    width: 50px;
-    left: 0;
-    top: 0;
-    height: 100%;
-    display: block;
-    position: absolute;
-    z-index: -1;
-    -ms-transform: skew(-5deg);
-        transform: skew(-5deg); }
-  .title a {
-    border-bottom: 0;
-    background-image: linear-gradient(to right, rgba(255, 196, 14, 0.8) 100%, rgba(255, 196, 14, 0.8) 50%); }
-
-.title--single {
-  max-width: 600px;
-  margin-top: -9rem;
-  font-size: 10rem;
-  text-align: center; }
 
 input, textarea {
   width: 100%;
@@ -1125,257 +1389,5 @@ pre.error {
   background: white;
   line-height: 3;
   white-space: pre-line; }
-
-.boss {
-  background: red; }
-
-.player-1 {
-  background: url(/images/chara-token/player/lopez.png) no-repeat;
-  background-size: 100%;
-  z-index: 1; }
-
-.player-2 {
-  background: url(/images/chara-token/player/wulf.png) no-repeat;
-  background-size: 100%;
-  z-index: 1; }
-
-.player-3 {
-  background: url(/images/chara-token/player/hugo.png) no-repeat;
-  background-size: 100%;
-  z-index: 1; }
-
-.player-4 {
-  background: url(/images/chara-token/player/booba.png) no-repeat;
-  background-size: 100%;
-  z-index: 1; }
-
-.player-5 {
-  background: indianred;
-  z-index: 1; }
-
-.ennemie-1 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-2 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-3 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-4 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-5 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-6 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-7 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-8 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-9 {
-  background: firebrick;
-  z-index: 1; }
-
-.ennemie-10 {
-  background: firebrick;
-  z-index: 1; }
-
-.tex-water {
-  background: url(/images/textures-plateau/tex_water.jpg) no-repeat;
-  background-size: 100%;
-  z-index: 0; }
-
-.tex-ground {
-  background: url(/images/textures-plateau/tex_ground.png) no-repeat;
-  background-size: 100%;
-  z-index: 0; }
-
-.tex-wall {
-  background: gray no-repeat;
-  background-size: 100%;
-  z-index: 0; }
-
-.list-item {
-  list-style: none;
-  width: 150px;
-  cursor: pointer; }
-
-#list-item .separateur {
-  visibility: hidden; }
-
-.list-item li {
-  padding: 10px 0px;
-  text-align: center;
-  background: grey;
-  border: 1px black dotted; }
-
-.list-item .item-selected-on-list {
-  background: lawngreen; }
-
-#plateau-jdr-control-pan h2 {
-  padding: 0px 0px;
-  font-size: 24px;
-  text-align: center; }
-
-#plateau-jdr-control-pan {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-
-#plateau tr:first-of-type {
-  text-align: center; }
-
-#plateau .case > div {
-  width: 100%;
-  height: 100%;
-  position: relative; }
-
-#plateau {
-  border-collapse: collapse; }
-
-#app {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: start;
-      align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: center;
-      justify-content: center; }
-
-#app tbody {
-  background: url(/images/maps/SnowySummit.jpg) no-repeat;
-  background-size: 782px 544px;
-  background-position: 11px 20.25px; }
-
-.case {
-  min-width: 34px;
-  height: 34px;
-  border: 1px solid black;
-  padding: 0; }
-
-#plateau-jdr-control-gen {
-  transition: all 1s linear; }
-
-.hidden {
-  -ms-transform-origin: 0 0;
-      transform-origin: 0 0;
-  -ms-transform: scale(0);
-      transform: scale(0);
-  height: 0px; }
-
-footer {
-  width: 100%;
-  min-height: 100px;
-  margin-top: 40px;
-  background: #303030; }
-
-footer p {
-  width: 100%;
-  text-align: center;
-  color: white;
-  margin: 0; }
-
-.cards {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  .cards p {
-    margin-top: 0px;
-    margin-bottom: 0px; }
-
-.single-card {
-  width: calc(33.3333% - 2*0.5em);
-  height: 250px;
-  background: transparent;
-  margin: 0.5em;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  padding: 0;
-  box-shadow: none; }
-
-.head-card {
-  background: firebrick;
-  text-align: center;
-  width: 100%;
-  height: 50px; }
-  .head-card p {
-    line-height: 3; }
-
-.body-card {
-  background: grey;
-  -ms-flex-positive: 4;
-      flex-grow: 4; }
-
-/* card lib
-
-*/
-.card-front {
-  z-index: 100;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transition: 2s;
-  min-height: 250px;
-  background: ghostwhite;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15); }
-
-.card-back {
-  z-index: 50;
-  transform: rotateY(-180deg);
-  /* Celui-ci est retourné par défaut */
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transition: 2s;
-  position: relative;
-  min-height: 250px;
-  top: -250px;
-  background: grey;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15); }
-
-.menu-card {
-  width: 150px;
-  height: 200px;
-  border: blue 2px solid;
-  margin: 0 50px; }
-  .menu-card a {
-    height: 100%;
-    display: block; }
-  .menu-card p {
-    margin: -3px 0 0 0;
-    height: 46px;
-    background: linear-gradient(90deg, #a026bf 20%, #e82c75 80%);
-    line-height: 46px;
-    text-align: center;
-    color: white; }
-  .menu-card img {
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    margin: 0; }
-
-#menu-horror {
-  display: -ms-flexbox;
-  display: flex;
-  width: 80%;
-  margin: auto;
-  -ms-flex-pack: center;
-      justify-content: center; }
 
 /*# sourceMappingURL=style.css.map*/

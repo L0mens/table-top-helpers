@@ -1,7 +1,14 @@
-@import 'partials/variables';
+@import 'mypartial/variables';
+
+@import 'mypartial/typo';
+@import 'mypartial/plateau';
+@import 'mypartial/footer';
+
+@import 'horror/horror';
+
+
 @import 'partials/layout';
 @import 'partials/normalize';
-@import 'partials/typography';
 @import 'partials/forms';
 @import 'partials/search';
 @import 'partials/flashes';
@@ -16,8 +23,3 @@
 @import 'partials/pagination';
 @import 'partials/map';
 @import 'partials/helpers';
-
-@import 'mypartial/plateau';
-@import 'mypartial/footer';
-
-@import 'horror/horror';
