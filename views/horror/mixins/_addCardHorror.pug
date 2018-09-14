@@ -1,7 +1,7 @@
 mixin addMiniCard(card = {})
     h3 Ajouter une mini carte
     form.form(action="" method="POST")
-    
+        input(type="hidden", name="schema", value="mini") 
         select(name="origin")
             option(value="Jeu de base") Jeu de base
         label(for="name") Nom
@@ -24,18 +24,22 @@ mixin addMiniCard(card = {})
 mixin addEncounterCard(card = {})
     h3 Ajouter une carte rencontre
     form.form(action="" method="POST")
+        input(type="hidden", name="schema" value="encounter") 
         select(name="origin")
             option(value="Jeu de base") Jeu de base
-        label(for="name") Nom
-        input(type="text" name="name" required)
-        label(for="type") Type
+        label(for="name") Nom Quête
+        input(type="text" name="name")
+        label(for="type") Type*
         select(name="type" id="select-type-encounter")
             option(value="Portail") Portail
             option(value="Expedition") Expédition
-            option(value="Monde") Monde
-            option(value="SpeGA") Spéciale Grand Ancien
+            option(value="Ville") Ville
+            option(value="Jungle") Jungle
+            option(value="Mer") Mer
+            option(value="Indice") Indice
             option(value="RechGA") Recherche Grand Ancien
-        label(for="lieux") Lieux
+            option(value="Other") Autre
+        label(for="lieux") Lieux 
         input(type="text" name="lieux")
         label(for="first") Premier bloc
         input(type="text", name="first-title" placeholder="Titre")
@@ -48,3 +52,5 @@ mixin addEncounterCard(card = {})
         textarea(name="third", cols="30", rows="10" )
         label(for="number") Numero
         input(type="text", name="number")
+
+        input(type="submit", value="Ajouter la carte")

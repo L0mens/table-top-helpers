@@ -30,4 +30,33 @@ const miniCardsSchema = new Schema({
     },
     image: String
 });
+
+const encounterCardsSchema = new Schema({
+    questName : {
+        type: String
+    },
+    cardType : {
+        type: String,
+        required :  "Une carte doit posséder un type"
+    },
+    place : {
+        type: String        
+    },
+    texts : [{
+        title: String,
+        content: {
+            type: String,
+            required: "Un contenu textuel est requis"
+        }
+    }],
+    numero : Number,
+    origin : {
+        type : String,
+        default: "Jeu de base",
+        required : "Cette carte doit appartenir à un jeu"
+    },
+    image: String
+});
+
  module.exports = mongoose.model('HorrorMiniCards', miniCardsSchema);
+ module.exports = mongoose.model('HorrorEncounterCards', encounterCardsSchema);
