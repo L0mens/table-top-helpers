@@ -1,0 +1,43 @@
+#multi-form-add-nav {
+
+    max-width: 660px;
+    margin: 0 auto;
+    font-size: 22px;
+
+    li{
+        list-style-type: none;
+        display: inline;
+        text-align: center;
+    }
+
+    a {
+        display: inline-block;
+        width: 33%;
+        padding: .75rem 0;
+        margin: 0;
+        text-decoration: none;
+        color: #333;
+    }
+
+
+    hr {
+        height: .25rem;
+        width: 33%;
+        margin: 0;
+        background: tomato;
+        border: none;
+        transition: .3s ease-in-out;
+    }
+
+    #sec-form-add:hover ~ hr {
+        margin-left: 33%;
+        background: orange;
+    }
+      
+    #third-form-add:hover ~ hr {
+        margin-left: 66%;
+        background: yellow;
+    }
+    
+
+}

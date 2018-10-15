@@ -3,6 +3,20 @@ include ./mixins/_addCardHorror
 block content
     h2 Ajouter une carte
     a.button(href="/horror") Retour au menu
-    +addMiniCard()
-    +addEncounterCard()
+    nav#multi-form-add-nav
+        ul
+            li#first-form-add 
+                a Mini Carte
+            li#sec-form-add
+                a Carte Rencontre
+            li#third-form-add
+                a Carte Mythe
+            hr
+    #multi-form-add
+        #mini-form-add.form-add
+            +addMiniCard()
+        #encounter-form-add.form-add
+            +addEncounterCard()
+        #mythe-form-add.form-add
+            +addMytheCard()
     

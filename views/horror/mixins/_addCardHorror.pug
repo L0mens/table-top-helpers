@@ -1,5 +1,5 @@
 mixin addMiniCard(card = {})
-    h3 Ajouter une mini carte
+    h3 Mini carte
     form.form(action="" method="POST")
         input(type="hidden", name="schema", value="mini") 
         select(name="origin")
@@ -22,7 +22,7 @@ mixin addMiniCard(card = {})
         input(type="submit", value="Ajouter la carte")
 
 mixin addEncounterCard(card = {})
-    h3 Ajouter une carte rencontre
+    h3 Carte rencontre
     form.form(action="" method="POST")
         input(type="hidden", name="schema" value="encounter") 
         select(name="origin")
@@ -53,4 +53,9 @@ mixin addEncounterCard(card = {})
         label(for="number") Numero
         input(type="text", name="number")
 
+        input(type="submit", value="Ajouter la carte")
+
+mixin addMytheCard(card = {})
+    h3 Carte Mythe
+    form.form(action="" method="POST")
         input(type="submit", value="Ajouter la carte")
