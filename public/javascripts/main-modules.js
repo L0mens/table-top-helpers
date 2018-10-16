@@ -10,6 +10,8 @@ require('./modules/plateau-jdr-control-pan');
 
 require('./modules/reverse-card');
 
+require('./modules/horror/horror-add-card')
+
 //IF plateau-jdr is generated
 if($('#app.plateau-jdr')){
     loadMap();

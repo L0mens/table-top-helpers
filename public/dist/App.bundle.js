@@ -320,6 +320,8 @@ __webpack_require__(1);
 
 __webpack_require__(3);
 
+__webpack_require__(13);
+
 //IF plateau-jdr is generated
 if ((0, _bling.$)('#app.plateau-jdr')) {
     (0, _plateauJdr.loadMap)();
@@ -334,6 +336,49 @@ if ((0, _bling.$)('#plateau-jdr-control-gen')) {
             this.innerText = "Cacher";
             (0, _bling.$)('#plateau-jdr-control-gen').classList.remove("hidden");
         }
+    });
+}
+
+/***/ }),
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+//CHeck if document is ready to be use
+if (document.getElementById('multi-form-add-nav') != undefined) {
+    console.log('horror-add.js loaded');
+    var first = document.getElementById('first-form-add');
+    var sec = document.getElementById('sec-form-add');
+    var third = document.getElementById('third-form-add');
+
+    var mini = document.getElementById('mini-form-add');
+    var encounter = document.getElementById('encounter-form-add');
+    var mythe = document.getElementById('mythe-form-add');
+
+    first.addEventListener('click', function () {
+        mini.style.display = 'block';
+        encounter.style.display = 'none';
+        mythe.style.display = 'none';
+    });
+
+    sec.addEventListener('click', function () {
+        mini.style.display = 'none';
+        encounter.style.display = 'block';
+        mythe.style.display = 'none';
+    });
+
+    third.addEventListener('click', function () {
+        mini.style.display = 'none';
+        encounter.style.display = 'none';
+        mythe.style.display = 'block';
     });
 }
 

@@ -346,15 +346,21 @@ footer p {
     height: .25rem;
     width: 33%;
     margin: 0;
-    background: tomato;
+    background: skyblue;
     border: none;
     transition: .3s ease-in-out; }
   #multi-form-add-nav #sec-form-add:hover ~ hr {
     margin-left: 33%;
-    background: orange; }
+    background: orangered; }
   #multi-form-add-nav #third-form-add:hover ~ hr {
     margin-left: 66%;
-    background: yellow; }
+    background: darkmagenta; }
+
+.form-add {
+  display: none; }
+
+#mini-form-add {
+  display: block; }
 
 html {
   font-size: 10px; }
