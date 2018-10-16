@@ -330,37 +330,62 @@ footer p {
 #multi-form-add-nav {
   max-width: 660px;
   margin: 0 auto;
-  font-size: 22px; }
-  #multi-form-add-nav li {
+  font-size: 22px;
+  /*
+    li{
+        display: inline;
+        list-style-type: none;
+        text-align: center;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        
+    }
+
+    a {
+        display: inline-block;
+        width: 33%;
+        padding: .75rem 0;
+        margin: 0;
+        text-decoration: none;
+        color: #333;
+    }
+    */ }
+  #multi-form-add-nav ul {
     list-style-type: none;
-    display: inline;
-    text-align: center; }
-  #multi-form-add-nav a {
-    display: inline-block;
-    width: 33%;
-    padding: .75rem 0;
     margin: 0;
-    text-decoration: none;
-    color: #333; }
-  #multi-form-add-nav hr {
-    height: .25rem;
+    padding: 0;
+    overflow: hidden; }
+  #multi-form-add-nav li {
+    float: left;
     width: 33%;
-    margin: 0;
-    background: skyblue;
-    border: none;
-    transition: .3s ease-in-out; }
-  #multi-form-add-nav #sec-form-add:hover ~ hr {
-    margin-left: 33%;
-    background: orangered; }
-  #multi-form-add-nav #third-form-add:hover ~ hr {
-    margin-left: 66%;
-    background: darkmagenta; }
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px; }
+  #multi-form-add-nav li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; }
+
+#first-form-add {
+  background: skyblue; }
 
 .form-add {
-  display: none; }
+  display: none;
+  padding: 0 30px; }
+  .form-add h3 {
+    margin-top: 0px;
+    padding-top: 30px; }
 
 #mini-form-add {
-  display: block; }
+  display: block;
+  background: skyblue; }
+
+#encounter-form-add {
+  background: orangered; }
+
+#mythe-form-add {
+  background: magenta; }
 
 html {
   font-size: 10px; }

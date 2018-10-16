@@ -12,19 +12,28 @@ if(document.getElementById('multi-form-add-nav') != undefined){
     first.addEventListener('click', () =>{
         mini.style.display = 'block';
         encounter.style.display = 'none';
-        mythe.style.display = 'none'
+        mythe.style.display = 'none';
+        first.style.backgroundColor = "skyblue";          
+        sec.style.backgroundColor = "transparent";
+        third.style.backgroundColor = "transparent";
     });
 
     sec.addEventListener('click', () =>{
         mini.style.display = 'none';
         encounter.style.display = 'block';
-        mythe.style.display = 'none'
+        mythe.style.display = 'none';
+        first.style.backgroundColor = "transparent";          
+        sec.style.backgroundColor = "orangered";
+        third.style.backgroundColor = "transparent";
     });
 
     third.addEventListener('click', () =>{
         mini.style.display = 'none';
         encounter.style.display = 'none';
-        mythe.style.display = 'block'
+        mythe.style.display = 'block';
+        first.style.backgroundColor = "transparent";          
+        sec.style.backgroundColor = "transparent";
+        third.style.backgroundColor = "magenta";
     });
 
 }

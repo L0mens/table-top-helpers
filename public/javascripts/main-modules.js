@@ -2,8 +2,6 @@ import '../sass/style.scss';
 
 import { $, $$ } from './modules/bling';
 
-import test from './modules/test';
-
 import {loadMap} from './modules/plateau-jdr';
 
 require('./modules/plateau-jdr-control-pan');
@@ -15,8 +13,8 @@ require('./modules/horror/horror-add-card')
 //IF plateau-jdr is generated
 if($('#app.plateau-jdr')){
     loadMap();
-
 }
+
 //if we get a controlboard to gen a plateau-jdr
 if($('#plateau-jdr-control-gen')){
     $('.btn-hide-seek').addEventListener('click',function (e){

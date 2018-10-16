@@ -4,10 +4,14 @@
     margin: 0 auto;
     font-size: 22px;
 
+    /*
     li{
-        list-style-type: none;
         display: inline;
+        list-style-type: none;
         text-align: center;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        
     }
 
     a {
@@ -18,35 +22,54 @@
         text-decoration: none;
         color: #333;
     }
-
-
-    hr {
-        height: .25rem;
-        width: 33%;
+    */
+    ul {
+        list-style-type: none;
         margin: 0;
-        background: skyblue;
-        border: none;
-        transition: .3s ease-in-out;
-    }
-
-    #sec-form-add:hover ~ hr {
-        margin-left: 33%;
-        background: orangered;
-    }
-      
-    #third-form-add:hover ~ hr {
-        margin-left: 66%;
-        background: darkmagenta;
+        padding: 0;
+        overflow: hidden;
     }
     
-
+    li {
+        float: left;
+        width : 33%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    
+    li a {
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+    }
+    
 }
 
+#first-form-add{
+    background: skyblue;
+}
 
 .form-add{
     display: none;
+    padding: 0 30px ;
+    h3{
+        margin-top:0px; 
+        padding-top: 30px;
+    }
 }
 
 #mini-form-add{
     display: block;
+    background: skyblue;
+}
+
+#encounter-form-add{
+    background: orangered;
+}
+
+#mythe-form-add{
+    background: magenta;
 }

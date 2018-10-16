@@ -94,7 +94,3 @@ Array.from(document.getElementsByClassName('list-item')).forEach( elem => {
         });
     });
 });
- 
-
-
-console.log("load");

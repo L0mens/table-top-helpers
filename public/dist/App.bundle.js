@@ -103,6 +103,52 @@ exports.$$ = $$;
 "use strict";
 
 
+//CHeck if document is ready to be use
+if (document.getElementById('multi-form-add-nav') != undefined) {
+    console.log('horror-add.js loaded');
+    var first = document.getElementById('first-form-add');
+    var sec = document.getElementById('sec-form-add');
+    var third = document.getElementById('third-form-add');
+
+    var mini = document.getElementById('mini-form-add');
+    var encounter = document.getElementById('encounter-form-add');
+    var mythe = document.getElementById('mythe-form-add');
+
+    first.addEventListener('click', function () {
+        mini.style.display = 'block';
+        encounter.style.display = 'none';
+        mythe.style.display = 'none';
+        first.style.backgroundColor = "skyblue";
+        sec.style.backgroundColor = "transparent";
+        third.style.backgroundColor = "transparent";
+    });
+
+    sec.addEventListener('click', function () {
+        mini.style.display = 'none';
+        encounter.style.display = 'block';
+        mythe.style.display = 'none';
+        first.style.backgroundColor = "transparent";
+        sec.style.backgroundColor = "orangered";
+        third.style.backgroundColor = "transparent";
+    });
+
+    third.addEventListener('click', function () {
+        mini.style.display = 'none';
+        encounter.style.display = 'none';
+        mythe.style.display = 'block';
+        first.style.backgroundColor = "transparent";
+        sec.style.backgroundColor = "transparent";
+        third.style.backgroundColor = "magenta";
+    });
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var classSelected = "player-1";
 var terrainSelected;
 var mode = "perso";
@@ -193,10 +239,8 @@ Array.from(document.getElementsByClassName('list-item')).forEach(function (elem)
     });
 });
 
-console.log("load");
-
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -245,7 +289,7 @@ function loadMap() {
 exports.loadMap = loadMap;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -276,22 +320,6 @@ cards.forEach(function (e) {
 });
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-function test() {
-    console.log("TEESSST");
-}
-
-exports.default = test;
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
@@ -308,24 +336,19 @@ __webpack_require__(5);
 
 var _bling = __webpack_require__(0);
 
-var _test = __webpack_require__(4);
+var _plateauJdr = __webpack_require__(3);
 
-var _test2 = _interopRequireDefault(_test);
+__webpack_require__(2);
 
-var _plateauJdr = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+__webpack_require__(4);
 
 __webpack_require__(1);
-
-__webpack_require__(3);
-
-__webpack_require__(13);
 
 //IF plateau-jdr is generated
 if ((0, _bling.$)('#app.plateau-jdr')) {
     (0, _plateauJdr.loadMap)();
 }
+
 //if we get a controlboard to gen a plateau-jdr
 if ((0, _bling.$)('#plateau-jdr-control-gen')) {
     (0, _bling.$)('.btn-hide-seek').addEventListener('click', function (e) {
@@ -336,49 +359,6 @@ if ((0, _bling.$)('#plateau-jdr-control-gen')) {
             this.innerText = "Cacher";
             (0, _bling.$)('#plateau-jdr-control-gen').classList.remove("hidden");
         }
-    });
-}
-
-/***/ }),
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-//CHeck if document is ready to be use
-if (document.getElementById('multi-form-add-nav') != undefined) {
-    console.log('horror-add.js loaded');
-    var first = document.getElementById('first-form-add');
-    var sec = document.getElementById('sec-form-add');
-    var third = document.getElementById('third-form-add');
-
-    var mini = document.getElementById('mini-form-add');
-    var encounter = document.getElementById('encounter-form-add');
-    var mythe = document.getElementById('mythe-form-add');
-
-    first.addEventListener('click', function () {
-        mini.style.display = 'block';
-        encounter.style.display = 'none';
-        mythe.style.display = 'none';
-    });
-
-    sec.addEventListener('click', function () {
-        mini.style.display = 'none';
-        encounter.style.display = 'block';
-        mythe.style.display = 'none';
-    });
-
-    third.addEventListener('click', function () {
-        mini.style.display = 'none';
-        encounter.style.display = 'none';
-        mythe.style.display = 'block';
     });
 }
 
